@@ -2,6 +2,10 @@ import { useNavigate } from "react-router";
 import MyButton from "./MyButton";
 
 const DiaryItem = ({ id, emotion, content, date }) => {
+  const env = process.env;
+  env.PUBLIC_URL = env.PUBLIC_URL || "";
+  //이거 안하면 이미지 인식을 못함 아주 중요
+
   const navigate = useNavigate();
   const strDate = new Date(parseInt(date)).toLocaleDateString();
 
