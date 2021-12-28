@@ -165,6 +165,99 @@ header .head_btn_right {
   min-width: 70px;
 }
 
+/* 다이어리 에디터 */
+.DiaryEditer {
+}
+.DiaryEditer .emotion_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2%;
+}
+
+.DiaryEditer section {
+  margin-bottom: 40px;
+}
+.DiaryEditer h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.DiaryEditer .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.DiaryEditer textarea {
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+}
+
+.DiaryEditer .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 이모션아이템 */
+
+.Emotionitem {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Emotionitem img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.Emotionitem span {
+  font-size: 18px;
+}
+
+.Emotionitem_off {
+  background-color: #ececec;
+}
+
+.Emotionitem_on_1 {
+  background: #64c964;
+  color: #fff;
+}
+
+.Emotionitem_on_2 {
+  background: #9dd772;
+  color: #fff;
+}
+
+.Emotionitem_on_3 {
+  background: #fdce17;
+  color: #fff;
+}
+
+.Emotionitem_on_4 {
+  background: #fd8446;
+  color: #fff;
+}
+
+.Emotionitem_on_5 {
+  background: #fd565f;
+  color: #fff;
+}
+
 /* 미디어쿼리 */
 
 @media (min-width: 650px) {
