@@ -7,7 +7,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   //이거 안하면 이미지 인식을 못함 아주 중요
 
   const navigate = useNavigate();
-  const strDate = new Date(parseInt(date)).toLocaleDateString();
+  const strDate = new Date(parseInt(date)).toLocaleDateString().slice(0, 12);
 
   const goDetail = () => {
     navigate(`/diary/${id}`);
@@ -34,7 +34,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
         <div className="diary_content_preview">{content.slice(0, 25)}</div>
       </div>
       <div className="btn_wrapper">
-        <MyButton text={"수정하기"} onClick={goEdit} />
+        <MyButton text={"수정"} onClick={goEdit} />
       </div>
     </div>
   );

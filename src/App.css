@@ -3,7 +3,16 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  /* background: rgb(200, 112, 188);
+  background: linear-gradient(
+    37deg,
+    rgba(200, 112, 188, 1) 0%,
+    rgba(246, 196, 222, 1) 17%,
+    rgba(157, 206, 236, 1) 35%,
+    rgba(68, 145, 196, 1) 59%,
+    rgba(20, 64, 101, 1) 100%
+  ); */
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +21,13 @@ body {
 }
 
 #root {
-  background-color: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
+  border-radius: 0;
 }
 
 .App {
-  min-height: 100vh;
+  min-height: 95vh;
   padding: 0 20px;
 }
 
@@ -28,25 +38,35 @@ body {
   border: none;
   outline: none;
   border-radius: 5px;
-  padding: 10px 20px 10px 20px;
-  font-size: 18px;
+  padding: 10px 15px;
+  font-size: 16px;
   white-space: nowrap;
   font-weight: 900;
 }
 
 .MyButton_default {
-  background-color: #ececec;
+  background-color: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
   color: #000;
 }
 
 .MyButton_positive {
   background-color: #64c964;
+  box-shadow: inset 5px 5px 9px #59b359, inset -5px -5px 9px #6fdf6f;
   color: #fff;
 }
 
 .MyButton_negative {
   background-color: #fd565f;
   color: #fff;
+}
+
+.MyButton_default:hover {
+  color: #000;
+  transition: all 0.5s;
+  background: #f0f0f0;
+  box-shadow: 5px 5px 9px #d6d6d6, -5px -5px 9px #ffffff;
+  outline: none;
 }
 
 /* 헤더 */
@@ -77,6 +97,21 @@ header .head_btn_right {
   justify-content: end;
 }
 
+.Btn_home > header > div > button {
+  border-radius: 50% !important;
+  background-color: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 900;
+}
+.Btn_home > header > div > button:hover {
+  transition: all 0.5s;
+  background: #f0f0f0;
+  box-shadow: 5px 5px 9px #d6d6d6, -5px -5px 9px #ffffff;
+  outline: none;
+}
+
 /* 다이어리 리스트 */
 
 .DiaryList .menu_wrapper {
@@ -88,22 +123,23 @@ header .head_btn_right {
 .menu_wrapper .right_col {
   flex-grow: 1;
 }
+
 .right_col button {
   width: 100%;
 }
 
 .DiaryList .ControlMenu {
-  margin: 0 10px;
+  margin-right: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
   outline: none;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 18px;
-  height: 46px;
+  font-size: 14px;
+  height: 100%;
 }
-
 /* 다이어리 아이템 */
 .DiaryItem {
   padding: 15px 0;
@@ -127,23 +163,28 @@ header .head_btn_right {
 }
 
 .emotion_img_wrapper_1 {
-  background-color: #64c964;
+  background: #64c964;
+  box-shadow: inset 5px 5px 9px #59b359, inset -5px -5px 9px #6fdf6f;
 }
 
 .emotion_img_wrapper_2 {
-  background-color: #9dd772;
+  background: #9dd772;
+  box-shadow: inset 5px 5px 9px #8cbf65, inset -5px -5px 9px #aeef7f;
 }
 
 .emotion_img_wrapper_3 {
-  background-color: #fdce17;
+  background: #fdce17;
+  box-shadow: inset 5px 5px 9px #e1b714, inset -5px -5px 9px #ffe51a;
 }
 
 .emotion_img_wrapper_4 {
-  background-color: #fd8446;
+  background: #fd8446;
+  box-shadow: inset 5px 5px 9px #e1753e, inset -5px -5px 9px #ff934e;
 }
 
 .emotion_img_wrapper_5 {
-  background-color: #fd565f;
+  background: #fd565f;
+  box-shadow: inset 5px 5px 9px #e14d55, inset -5px -5px 9px #ff5f69;
 }
 
 .DiaryItem .info_wrapper {
@@ -185,7 +226,8 @@ header .head_btn_right {
 .DiaryEditer .input_date {
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 18px;
@@ -198,7 +240,8 @@ header .head_btn_right {
   resize: vertical;
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
   padding: 20px;
 }
 
@@ -230,32 +273,38 @@ header .head_btn_right {
 }
 
 .Emotionitem_off {
-  background-color: #ececec;
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
 }
 
 .Emotionitem_on_1 {
   background: #64c964;
   color: #fff;
+  transition: all 0.5s;
 }
 
 .Emotionitem_on_2 {
   background: #9dd772;
   color: #fff;
+  transition: all 0.5s;
 }
 
 .Emotionitem_on_3 {
   background: #fdce17;
   color: #fff;
+  transition: all 0.5s;
 }
 
 .Emotionitem_on_4 {
   background: #fd8446;
   color: #fff;
+  transition: all 0.5s;
 }
 
 .Emotionitem_on_5 {
   background: #fd565f;
   color: #fff;
+  transition: all 0.5s;
 }
 
 /* 미디어쿼리 */
@@ -269,5 +318,27 @@ header .head_btn_right {
 @media (max-width: 650px) {
   .App {
     width: 90vw;
+  }
+
+  .DiaryList .menu_wrapper {
+    margin: 20px 0 30px 0;
+    display: block;
+  }
+  .DiaryList .ControlMenu {
+    width: 50%;
+    text-align: center;
+  }
+  .DiaryList .ControlMenu:nth-child(1) {
+    margin: 0 5px 0 0;
+  }
+  .DiaryList .ControlMenu:nth-child(2) {
+    margin: 0 0 0 5px;
+  }
+  .left_col {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 10px 0 !important;
+    flex-grow: 1;
   }
 }

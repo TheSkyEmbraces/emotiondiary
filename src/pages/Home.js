@@ -48,7 +48,7 @@ const Home = () => {
     );
   };
   return (
-    <div>
+    <div className="Btn_home">
       <MyHeader
         headText={headText}
         leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
