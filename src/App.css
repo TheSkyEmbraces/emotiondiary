@@ -307,6 +307,82 @@ header .head_btn_right {
   transition: all 0.5s;
 }
 
+/* 다이어리 */
+.DiaryPage {
+}
+
+.DiaryPage section {
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.DiaryPage h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.DiaryPage .diary_img_wrapper {
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.DiaryPage .emotion_descript {
+  font-size: 25px;
+}
+
+.diary_img_wrapper_1 {
+  background: #64c964 !important;
+  box-shadow: inset 5px 5px 9px #59b359, inset -5px -5px 9px #6fdf6f !important;
+}
+
+.diary_img_wrapper_2 {
+  background: #9dd772 !important;
+  box-shadow: inset 5px 5px 9px #8cbf65, inset -5px -5px 9px #aeef7f !important;
+}
+
+.diary_img_wrapper_3 {
+  background: #fdce17 !important;
+  box-shadow: inset 5px 5px 9px #e1b714, inset -5px -5px 9px #ffe51a !important;
+}
+
+.diary_img_wrapper_4 {
+  background: #fd8446 !important;
+  box-shadow: inset 5px 5px 9px #e1753e, inset -5px -5px 9px #ff934e !important;
+}
+
+.diary_img_wrapper_5 {
+  background: #fd565f !important;
+  box-shadow: inset 5px 5px 9px #e14d55, inset -5px -5px 9px #ff5f69 !important;
+}
+
+.DiaryPage .diary_content_wrapper {
+  width: 100%;
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 9px #d6d6d6, inset -5px -5px 9px #ffffff;
+  border-radius: 10px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.DiaryPage .diary_content_wrapper p {
+  padding: 20px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2.5;
+}
+
 /* 미디어쿼리 */
 
 @media (min-width: 650px) {

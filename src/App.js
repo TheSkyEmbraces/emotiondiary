@@ -1,13 +1,15 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
+//COMPONENTS
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 
-//COMPONENTS
+export const DiaryStateContext = React.createContext();
+export const DiaryDispatchContext = React.createContext();
 
 const reducer = (state, action) => {
   let newState = [];
@@ -35,48 +37,24 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
-export const DiaryStateContext = React.createContext();
-export const DiaryDispatchContext = React.createContext();
-
-const dummyData = [
-  {
-    id: 1,
-    emotion: 1,
-    content: "라라라라라라",
-    date: 1640587383600,
-  },
-  {
-    id: 2,
-    emotion: 2,
-    content: "ㄴ먀럼냐랴냚냘",
-    date: 1640587383601,
-  },
-  {
-    id: 3,
-    emotion: 3,
-    content: "ㄴ쇄ㅔㄴㅅ고ㅔㅐㅏ",
-    date: 1640587383602,
-  },
-  {
-    id: 4,
-    emotion: 4,
-    content: "ㅌㅊ픀ㅊ퓨",
-    date: 1640587383603,
-  },
-  {
-    id: 5,
-    emotion: 5,
-    content: "나니뉴내ㅑ네",
-    date: 1640587383604,
-  },
-];
-
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  useEffect(() => {
+    const localData = localStorage.getItem("diary");
+    if (localData) {
+      const diaryList = JSON.parse(localData).sort(
+        (a, b) => parseInt(b.id) - parseInt(a.id)
+      );
+      dataId.current = parseInt(diaryList[0].id) + 1;
 
+      dispatch({ type: "INIT", data: diaryList });
+    }
+  }, []);
+
+  const [data, dispatch] = useReducer(reducer, []);
   const dataId = useRef(0);
 
   //CREATE
@@ -118,7 +96,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/New" element={<New />} />
-              <Route path="/Edit" element={<Edit />} />
+              <Route path="/Edit/:id" element={<Edit />} />
               <Route path="/Diary/:id" element={<Diary />} />
             </Routes>
           </div>
